@@ -7,18 +7,22 @@ export default {
   theme: {
     extend: {
       colors: {
-        'cream': '#F5F5DC',
-        'warm-cream': '#FAF8F3',
-        'soft-gray': '#F8F8F8',
-        'text-dark': '#1A1A1A',
+        'primary': '#6B7C4E', // Verde oliva
+        'background': '#FFFFFF',
+        'foreground': '#000000',
+        'text-dark': '#000000',
         'text-gray': '#4A4A4A',
-        'text-light': '#6B6B6B',
+        'text-light': '#666666',
+        'muted': '#F5F5F5',
+        'muted-foreground': '#666666',
+        'warm-cream': '#FAF8F3', // Fondo crema cálido para columnas
       },
       fontFamily: {
         sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'system-ui', 'sans-serif'],
+        serif: ['Playfair Display', 'Georgia', 'serif'],
       },
       fontSize: {
-        'hero': ['clamp(3rem, 8vw, 6rem)', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+        'hero': ['clamp(4rem, 10vw, 7rem)', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
         'section-title': ['clamp(2.5rem, 5vw, 4rem)', { lineHeight: '1.2', letterSpacing: '-0.01em' }],
       },
       spacing: {

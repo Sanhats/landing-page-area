@@ -4,14 +4,14 @@ const TrustedBy = () => {
   const logos = Array(6).fill('Logoipsum')
 
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 bg-background">
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center text-text-light text-sm font-medium mb-8"
+          className="text-center text-text-light text-sm font-medium mb-8 font-sans"
         >
           Trusted by:
         </motion.p>
@@ -25,7 +25,7 @@ const TrustedBy = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.1 }}
-              className="text-text-light font-semibold text-xl"
+              className="text-text-light font-semibold text-xl font-sans"
             >
               {logo}
             </motion.div>

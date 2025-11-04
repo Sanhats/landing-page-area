@@ -25,8 +25,8 @@ const Benefits = () => {
   ]
 
   return (
-    <section id="benefits" className="py-24 md:py-32 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="benefits" className="py-20 md:py-32 bg-background">
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -34,16 +34,16 @@ const Benefits = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h2 className="text-section-title font-bold text-text-dark mb-6">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6">
             Benefits
           </h2>
-          <p className="text-2xl text-text-gray mb-3 font-medium">We've cracked the code.</p>
-          <p className="text-xl text-text-light font-normal">
+          <p className="text-lg md:text-xl text-text-gray mb-3 font-serif font-medium">We've cracked the code.</p>
+          <p className="text-base md:text-lg text-text-light font-sans font-normal">
             Area provides real insights, without the data overload.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {benefits.map((benefit, index) => (
             <motion.div
               key={benefit.title}
@@ -52,15 +52,15 @@ const Benefits = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -8, scale: 1.01 }}
-              className="bg-white p-10 rounded-3xl shadow-md hover:shadow-xl transition-all border border-gray-100"
+              className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all border border-gray-100"
             >
-              <div className="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-6">
+              <div className="flex flex-col items-start space-y-4">
                 <div className="text-5xl flex-shrink-0">{benefit.icon}</div>
                 <div>
-                  <h3 className="text-2xl font-bold text-text-dark mb-4 leading-tight">
+                  <h3 className="text-xl font-serif font-bold text-foreground mb-3 leading-tight">
                     {benefit.title}
                   </h3>
-                  <p className="text-lg text-text-gray leading-relaxed">
+                  <p className="text-base text-text-gray leading-relaxed font-sans">
                     {benefit.description}
                   </p>
                 </div>
@@ -69,7 +69,7 @@ const Benefits = () => {
           ))}
         </div>
 
-        {/* Phone illustration - más estilizado y realista */}
+        {/* Phone illustration */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -79,7 +79,6 @@ const Benefits = () => {
         >
           <div className="relative w-28 h-28 bg-black rounded-[1.5rem] p-2 shadow-2xl">
             <div className="w-full h-full bg-gradient-to-br from-blue-100 to-purple-100 rounded-xl flex items-center justify-center relative overflow-hidden">
-              {/* Simple phone screen content */}
               <div className="absolute inset-2 bg-white rounded-lg flex items-center justify-center">
                 <div className="text-4xl">📱</div>
               </div>

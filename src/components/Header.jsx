@@ -23,11 +23,11 @@ const Header = () => {
         isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm' : 'bg-transparent'
       }`}
     >
-      <nav className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <nav className="max-w-7xl mx-auto px-6 md:px-8 py-6">
         <div className="flex items-center justify-between">
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold text-text-dark"
+            className="text-3xl font-serif font-bold text-foreground"
           >
             Area
           </motion.div>
@@ -41,7 +41,7 @@ const Header = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -2 }}
-                className="text-text-gray hover:text-text-dark font-medium transition-colors"
+                className="text-text-gray hover:text-foreground font-medium transition-colors"
               >
                 {item}
               </motion.a>
@@ -51,9 +51,9 @@ const Header = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="hidden md:block px-6 py-2.5 bg-text-dark text-white rounded-xl font-semibold hover:bg-gray-800 transition-colors shadow-md"
+            className="hidden md:block px-6 py-2.5 bg-primary text-white rounded-lg font-semibold hover:opacity-90 transition-all shadow-md font-sans"
           >
-            Learn More
+            Learn More +
           </motion.button>
 
           <motion.button

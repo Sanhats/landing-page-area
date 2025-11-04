@@ -25,29 +25,24 @@ const SeeTheBigPicture = () => {
   ]
 
   return (
-    <section className="py-24 md:py-32 bg-warm-cream relative overflow-hidden">
-      {/* Background image - mountain range from above - más visible */}
-      <div className="absolute inset-0">
+    <section className="py-20 md:py-32 bg-gradient-to-b from-warm-cream to-background relative overflow-hidden">
+      {/* Full-width image section - mountain range */}
+      <div className="absolute inset-0 w-full h-full opacity-30">
         {/* Sky gradient */}
-        <div className="absolute top-0 left-0 right-0 h-2/3 bg-gradient-to-b from-gray-100 via-gray-50 to-warm-cream" />
-        {/* Mountains - múltiples capas */}
+        <div className="absolute top-0 left-0 right-0 h-2/3 bg-gradient-to-b from-blue-100 via-blue-50 to-warm-cream" />
+        {/* Mountains - múltiples capas más definidas */}
         <div className="absolute bottom-0 left-0 right-0 h-1/3">
-          {/* Mountain peaks */}
           <div className="absolute bottom-0 left-0 right-0 h-full">
-            {/* Peak 1 */}
-            <div className="absolute bottom-0 left-1/4 w-40 h-32 bg-gradient-to-t from-gray-500 via-gray-400 to-gray-300 rounded-t-full opacity-50" />
-            {/* Peak 2 - más grande */}
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-56 h-40 bg-gradient-to-t from-gray-600 via-gray-500 to-gray-400 rounded-t-full opacity-60" />
-            {/* Peak 3 */}
-            <div className="absolute bottom-0 right-1/4 w-48 h-36 bg-gradient-to-t from-gray-500 via-gray-400 to-gray-300 rounded-t-full opacity-50" />
-            {/* Smaller peaks */}
-            <div className="absolute bottom-0 left-1/6 w-24 h-20 bg-gradient-to-t from-gray-400 to-gray-300 rounded-t-full opacity-40" />
-            <div className="absolute bottom-0 right-1/6 w-28 h-22 bg-gradient-to-t from-gray-400 to-gray-300 rounded-t-full opacity-40" />
+            <div className="absolute bottom-0 left-1/4 w-48 h-36 bg-gradient-to-t from-gray-600 via-gray-500 to-gray-400 rounded-t-full opacity-60" />
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-64 h-44 bg-gradient-to-t from-gray-700 via-gray-600 to-gray-500 rounded-t-full opacity-70" />
+            <div className="absolute bottom-0 right-1/4 w-56 h-40 bg-gradient-to-t from-gray-600 via-gray-500 to-gray-400 rounded-t-full opacity-60" />
+            <div className="absolute bottom-0 left-1/8 w-32 h-24 bg-gradient-to-t from-gray-500 to-gray-400 rounded-t-full opacity-50" />
+            <div className="absolute bottom-0 right-1/8 w-36 h-28 bg-gradient-to-t from-gray-500 to-gray-400 rounded-t-full opacity-50" />
           </div>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -55,15 +50,15 @@ const SeeTheBigPicture = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h2 className="text-section-title font-bold text-text-dark mb-6">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6">
             See the Big Picture
           </h2>
-          <p className="text-xl sm:text-2xl text-text-gray max-w-4xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-text-gray max-w-4xl mx-auto leading-relaxed font-sans">
             Area turns your data into clear, vibrant visuals that show you exactly what's happening in each region.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14">
           {features.map((feature, index) => (
             <motion.div
               key={feature.number}
@@ -72,17 +67,16 @@ const SeeTheBigPicture = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ scale: 1.02, y: -5 }}
-              className="bg-white p-10 rounded-3xl shadow-md hover:shadow-xl transition-all border border-gray-100"
+              className="bg-white p-10 rounded-3xl shadow-sm hover:shadow-md transition-all border border-gray-100"
             >
               <div className="flex items-start space-x-6">
-                <span className="text-5xl font-bold text-gray-300 flex-shrink-0 leading-none">
+                <span className="text-5xl font-bold text-gray-300 flex-shrink-0 leading-none font-serif">
                   {feature.number}
                 </span>
                 <div>
-                  <h3 className="text-2xl font-bold text-text-dark mb-3 leading-tight">
-                    {feature.title}
+                  <h3 className="text-xl md:text-2xl font-serif font-bold text-foreground mb-3 leading-tight">
+                    {feature.title}: {feature.description}
                   </h3>
-                  <p className="text-lg text-text-gray leading-relaxed">{feature.description}</p>
                 </div>
               </div>
             </motion.div>
@@ -99,19 +93,19 @@ const SeeTheBigPicture = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-10 py-5 bg-text-dark text-white rounded-xl font-semibold text-lg hover:bg-gray-800 transition-colors shadow-lg"
+            className="px-10 py-5 bg-primary text-white rounded-lg font-semibold text-lg hover:opacity-90 transition-all shadow-md font-sans"
           >
             Discover More
           </motion.button>
         </motion.div>
 
-        {/* Cylindrical columns illustration - white columns on warm cream background */}
+        {/* Cylindrical columns illustration - white columns sobre fondo crema cálido */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-24 flex justify-center items-end space-x-8 pb-12"
+          className="mt-24 flex justify-center items-end space-x-8 pb-12 px-8 py-12 rounded-3xl bg-warm-cream"
         >
           {[
             { height: 'h-40', width: 'w-16', delay: 0 },
@@ -120,7 +114,7 @@ const SeeTheBigPicture = () => {
           ].map((col, i) => (
             <motion.div
               key={i}
-              className={`${col.width} ${col.height} bg-white rounded-full shadow-xl`}
+              className={`${col.width} ${col.height} bg-white rounded-full shadow-lg`}
               style={{
                 boxShadow: '0 10px 25px rgba(0,0,0,0.1)',
               }}
